@@ -1,0 +1,30 @@
+/* Default styles for input elements */
+input {
+    width: 100px;
+    height: 70px;
+    font-size: 40px;
+    margin: 10px;
+    background-color: pink;
+    color: red;
+}
+
+/* Styles for the form */
+#f {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* Adjust form width based on content */
+}
+
+/* Styles for the h1 element */
+h1 {
+    text-align: center;
+    font-size: 80px;
+    margin-top: 10px; /* Adjusted margin-top */
+    margin-bottom: 10px; /* Adjusted margin-bottom */
+}
+
+/* Styles for the button rows */
+.button-row {
+    display: flex;
+    justify-content: space-around; /* Distribute buttons evenly within the row */
+}

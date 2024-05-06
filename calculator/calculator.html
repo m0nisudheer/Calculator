@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form id="f" name="c">
+        <input name="display" style="background-color:black;color:white;width:465px;height:100px;text-align:center"><br/>
+        <div class="button-row">
+            <input type="button" value="1" onclick="c.display.value+='1'">
+            <input type="button" value="2" onclick="c.display.value+='2'">
+            <input type="button" value="3" onclick="c.display.value+='3'">
+            <input type="button" value="+" onclick="c.display.value+='+'" style="background-color:yellow">
+        </div>
+        <div class="button-row">
+            <input type="button" value="4" onclick="c.display.value+='4'">
+            <input type="button" value="5" onclick="c.display.value+='5'">
+            <input type="button" value="6" onclick="c.display.value+='6'">
+            <input type="button" value="-" onclick="c.display.value+='-'" style="background-color:yellow">
+        </div>
+        <div class="button-row">
+            <input type="button" value="7" onclick="c.display.value+='7'">
+            <input type="button" value="8" onclick="c.display.value+='8'">
+            <input type="button" value="9" onclick="c.display.value+='9'">
+            <input type="button" value="x" onclick="c.display.value+='*'" style="background-color:yellow">
+        </div>
+        <div class="button-row">
+            <input type="button" value="c" onclick="c.display.value=''" style="background-color:yellow">
+            <input type="button" value="0" onclick="c.display.value+='0'">
+            <input type="button" value="=" onclick="c.display.value=eval(c.display.value)" style="background-color:yellow">
+            <input type="button" value="&#247" onclick="c.display.value+='/'" style="background-color:yellow">
+        </div>
+    </form>
+</body>
+</html>
