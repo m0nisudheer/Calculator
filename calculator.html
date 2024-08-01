@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0;
+        }
+
+        /* Calculator container */
+        .calculator-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        /* Display input */
+        .display {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            border: none;
+            border-radius: 10px;
+            text-align: right;
+            width: 100%;
+            max-width: 360px;
+            height: 80px;
+            font-size: 2em;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Button grid */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* Buttons */
+        .button {
+            background-color: #f2f2f2;
+            color: #333;
+            border: none;
+            width: 80px;
+            height: 80px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .button.operator {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        .button:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .button.operator:hover {
+            background-color: #f57c00;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 style="color: white; margin-bottom: 20px;">Calculator</h1>
+        <form id="f" name="c">
+            <input name="display" type="text" class="display" readonly>
+            <div class="button-grid">
+                <input type="button" value="1" class="button" onclick="c.display.value+='1'">
+                <input type="button" value="2" class="button" onclick="c.display.value+='2'">
+                <input type="button" value="3" class="button" onclick="c.display.value+='3'">
+                <input type="button" value="+" class="button operator" onclick="c.display.value+='+'">
+                <input type="button" value="4" class="button" onclick="c.display.value+='4'">
+                <input type="button" value="5" class="button" onclick="c.display.value+='5'">
+                <input type="button" value="6" class="button" onclick="c.display.value+='6'">
+                <input type="button" value="-" class="button operator" onclick="c.display.value+='-'">
+                <input type="button" value="7" class="button" onclick="c.display.value+='7'">
+                <input type="button" value="8" class="button" onclick="c.display.value+='8'">
+                <input type="button" value="9" class="button" onclick="c.display.value+='9'">
+                <input type="button" value="*" class="button operator" onclick="c.display.value+='*'">
+                <input type="button" value="c" class="button operator" onclick="c.display.value=''">
+                <input type="button" value="0" class="button" onclick="c.display.value+='0'">
+                <input type="button" value="=" class="button operator" onclick="calculate()">
+                <input type="button" value="&#247" class="button operator" onclick="c.display.value+='/'">
+            </div>
+        </form>
+    </div>
+    <script>
+    function calculate() {
+        try {
+            var result = Function('"use strict";return (' + document.c.display.value + ')')();
+            document.c.display.value = result;
+        } catch (e) {
+            document.c.display.value = 'Error';
+        }
+    }
+    </script>
+</body>
+</html>
